@@ -6,7 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Sign extends Model
 {
-     protected $fillable = [
-        'title', 'description', 'image'
-    ];
+    protected $table =['signs'];
+
+     protected $fillable = ['title', 'image','lang'];
+
+     protected $hidden=['created_at','updated_at'];
+
+
 }

@@ -6,7 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class QuestionBank extends Model
 {
-      protected $fillable = [
-        'title', 'description'
-    ];
+
+  protected $table = ['question_bank'];
+
+  protected $fillable = ['questio','answer','lang'];
+
+  protected $hidden = ['created_at', 'updated_at'];
 }
