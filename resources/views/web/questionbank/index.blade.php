@@ -3,7 +3,6 @@
 @section('title', 'Question Bank')
 
 @section('content')
-   
 
     <!-- question answer section start -->
     <section class="sub-sections question-section">
@@ -26,355 +25,31 @@
                 <div class="col-12">
                     <ul class="nav nav-pills nav-fill gap-3 mb-5 question-nav" id="pills-tab" role="tablist">
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link active fw-700" id="home-tab" data-bs-toggle="tab"
-                                data-bs-target="#home" type="button" role="tab" aria-controls="pills-home"
-                                aria-selected="true">Questions</button>
+                            <button class="nav-link active fw-700" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
+                                type="button" role="tab" aria-controls="pills-home" aria-selected="true">Questions</button>
                         </li>
                         <li class="nav-item nav-secont-item" role="presentation">
-                            <button class="nav-link sign-link traffic-content-space" id="profile-tab"
-                                data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab"
-                                aria-controls="pills-profile" aria-selected="true">Traffic Signs</button>
+                            <button class="nav-link sign-link traffic-content-space" id="profile-tab" data-bs-toggle="tab"
+                                data-bs-target="#profile" type="button" role="tab" aria-controls="pills-profile"
+                                aria-selected="true">Traffic Signs</button>
                         </li>
                     </ul>
 
                     <div class="tab-content question-tab-content" id="pills-tabContent">
                         <div class="tab-pane fade show active question-tab-info" id="home" role="tabpanel"
                             aria-labelledby="home-tab">
-                            <div class="row gap-y-20px">
-                                <div class="col-12 col-md-6">
-                                    <div class="card content-card">
-                                        <div class="card-body">
-                                            <div class="content-body d-flex gap-2 align-items-center">
-                                                <span
-                                                    class="start-content text-center fw-700 start-number theme-color-fff">01
-                                                </span>
-                                                <p class="fs-18px theme-color-54595f fw-300 mb-0">Lorem ipsum dolor sit
-                                                    amet consectetur.
-                                                </p>
-                                            </div>
-                                            <div class="content-body second-content d-flex gap-2 align-items-center">
-                                                <span class="start-content text-center start-alpha fs-18px">A</span>
-                                                <p class="fs-18px fw-300 theme-color-54595f mb-0">Lorem ipsum dolor sit
-                                                    amet consectetur.</p>
-                                            </div>
-                                        </div>
-                                    </div>
+                            <div class="scroll-container" style="height:800px; overflow-y:auto;">
+                                <div class="row g-4" id="questionContainer">
+                                    <!-- Questions will be loaded dynamically here -->
                                 </div>
-                                <div class="col-12 col-md-6">
-                                    <div class="card content-card">
-                                        <div class="card-body">
-                                            <div class="content-body d-flex gap-2 align-items-center">
-                                                <span
-                                                    class="start-content text-center fw-700 start-number theme-color-fff">02
-                                                </span>
-                                                <p class="fs-18px theme-color-54595f fw-300 mb-0">Lorem ipsum dolor sit
-                                                    amet consectetur.
-                                                </p>
-                                            </div>
-                                            <div class="content-body second-content d-flex gap-2 align-items-center">
-                                                <span class="start-content text-center start-alpha fs-18px">A</span>
-                                                <p class="fs-18px fw-300 theme-color-54595f mb-0">Lorem ipsum dolor sit
-                                                    amet consectetur.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6">
-                                    <div class="card content-card">
-                                        <div class="card-body">
-                                            <div class="content-body d-flex gap-2 align-items-center">
-                                                <span
-                                                    class="start-content text-center fw-700 start-number theme-color-fff">03
-                                                </span>
-                                                <p class="fs-18px theme-color-54595f fw-300 mb-0">Lorem ipsum dolor sit
-                                                    amet consectetur.
-                                                </p>
-                                            </div>
-                                            <div class="content-body second-content d-flex gap-2 align-items-center">
-                                                <span class="start-content text-center start-alpha fs-18px">A</span>
-                                                <p class="fs-18px fw-300 theme-color-54595f mb-0">Lorem ipsum dolor sit
-                                                    amet consectetur.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6">
-                                    <div class="card content-card">
-                                        <div class="card-body">
-                                            <div class="content-body d-flex gap-2 align-items-center">
-                                                <span
-                                                    class="start-content text-center fw-700 start-number theme-color-fff">04
-                                                </span>
-                                                <p class="fs-18px theme-color-54595f fw-300 mb-0">Near a pedestrian
-                                                    crossing, when the pedestrians are waiting to cross
-                                                    the road, you should
-                                                </p>
-                                            </div>
-                                            <div class="content-body second-content d-flex gap-2 align-items-center">
-                                                <span class="start-content text-center start-alpha fs-18px">A</span>
-                                                <p class="fs-18px fw-300 theme-color-54595f mb-0">Near a pedestrian
-                                                    crossing, when the pedestrians are waiting crossing, when the
-                                                    pedestrians are waiting to cross
-                                                    the road, you should</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6">
-                                    <div class="card content-card">
-                                        <div class="card-body">
-                                            <div class="content-body d-flex gap-2 align-items-center">
-                                                <span
-                                                    class="start-content text-center fw-700 start-number theme-color-fff">05
-                                                </span>
-                                                <p class="fs-18px theme-color-54595f fw-300 mb-0">Near a pedestrian
-                                                    crossing, when the pedestrians are waiting to cross
-                                                    the road, you should
-                                                </p>
-                                            </div>
-                                            <div class="content-body second-content d-flex gap-2 align-items-center">
-                                                <span class="start-content text-center start-alpha fs-18px">A</span>
-                                                <p class="fs-18px fw-300 theme-color-54595f mb-0">Near a pedestrian
-                                                    crossing, when the pedestrians are waiting crossing, when the
-                                                    pedestrians are waiting to cross
-                                                    the road, you should</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6">
-                                    <div class="card content-card">
-                                        <div class="card-body">
-                                            <div class="content-body d-flex gap-2 align-items-center">
-                                                <span
-                                                    class="start-content text-center fw-700 start-number theme-color-fff">06
-                                                </span>
-                                                <p class="fs-18px theme-color-54595f fw-300 mb-0">Near a pedestrian
-                                                    crossing, when the pedestrians are waiting to cross
-                                                    the road, you should
-                                                </p>
-                                            </div>
-                                            <div class="content-body second-content d-flex gap-2 align-items-center">
-                                                <span class="start-content text-center start-alpha fs-18px">A</span>
-                                                <p class="fs-18px fw-300 theme-color-54595f mb-0 theme-color-161616">
-                                                    Near a pedestrian crossing, when the pedestrians are waiting
-                                                    crossing, when the pedestrians are waiting to cross
-                                                    the road, you should</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6">
-                                    <div class="card content-card">
-                                        <div class="card-body">
-                                            <div class="content-body d-flex gap-2 align-items-center">
-                                                <span
-                                                    class="start-content text-center fw-700 start-number theme-color-fff">07
-                                                </span>
-                                                <p class="fs-18px theme-color-54595f fw-300 mb-0">Near a pedestrian
-                                                    crossing, when the pedestrians are waiting to cross
-                                                    the road, you should
-                                                </p>
-                                            </div>
-                                            <div class="content-body second-content d-flex gap-2 align-items-center">
-                                                <span class="start-content text-center start-alpha fs-18px">A</span>
-                                                <p class="fs-18px fw-300 theme-color-54595f mb-0">Near a pedestrian
-                                                    crossing, when the pedestrians are waiting crossing, when the
-                                                    pedestrians are waiting to cross
-                                                    the road, you should</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6">
-                                    <div class="card content-card">
-                                        <div class="card-body">
-                                            <div class="content-body d-flex gap-2 align-items-center">
-                                                <span
-                                                    class="start-content text-center fw-700 start-number theme-color-fff">08
-                                                </span>
-                                                <p class="fs-18px theme-color-54595f fw-300 mb-0">Near a pedestrian
-                                                    crossing, when the pedestrians are waiting to cross
-                                                    the road, you should
-                                                </p>
-                                            </div>
-                                            <div class="content-body second-content d-flex gap-2 align-items-center">
-                                                <span class="start-content text-center start-alpha fs-18px">A</span>
-                                                <p class="fs-18px fw-300 theme-color-54595f mb-0">Near a pedestrian
-                                                    crossing, when the pedestrians are waiting crossing, when the
-                                                    pedestrians are waiting to cross
-                                                    the road, you should</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
                             </div>
                         </div>
 
                         <div class="tab-pane traffic-sign-tab fade" id="profile" role="tabpanel"
                             aria-labelledby="profile-tab">
-                            <div class="row g-4">
-
-                                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                                    <div class="card content-card traffic-sign-card">
-                                        <div class="card-body">
-                                            <div class="content-body card-border-none">
-                                                <span
-                                                    class="start-content start-number theme-color-fff text-center mx-sm-0 mx-auto">01</span>
-                                                <div class="traffic-sign-image">
-                                                    <img src="assets/image/ts-upload/ts-img1.png"
-                                                        class="img-fluid mx-auto d-block ">
-                                                </div>
-                                                <p class="traffic-signs-info fw-500 text-center theme-color-161616">Stop
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                                    <div class="card content-card traffic-sign-card">
-                                        <div class="card-body">
-                                            <div class="content-body card-border-none">
-                                                <span
-                                                    class="start-content start-number theme-color-fff text-center mx-sm-0 mx-auto">02</span>
-                                                <div class="traffic-sign-image">
-                                                    <img src="assets/image/ts-upload/ts-img2.png"
-                                                        class="img-fluid mx-auto d-block ">
-                                                </div>
-                                                <p class="traffic-signs-info fw-500 text-center theme-color-161616">Keep
-                                                    left</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                                    <div class="card content-card traffic-sign-card">
-                                        <div class="card-body">
-                                            <div class="content-body card-border-none">
-                                                <span
-                                                    class="start-content start-number theme-color-fff text-center mx-sm-0 mx-auto">03</span>
-                                                <div class="traffic-sign-image">
-                                                    <img src="assets/image/ts-upload/ts-img3.png"
-                                                        class="img-fluid mx-auto d-block ">
-                                                </div>
-                                                <p class="traffic-signs-info fw-500 text-center theme-color-161616">Give
-                                                    way</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                                    <div class="card content-card traffic-sign-card">
-                                        <div class="card-body">
-                                            <div class="content-body card-border-none">
-                                                <span
-                                                    class="start-content start-number theme-color-fff text-center mx-sm-0 mx-auto">04</span>
-                                                <div class="traffic-sign-image">
-                                                    <img src="assets/image/ts-upload/ts-img4.png"
-                                                        class="img-fluid mx-auto d-block ">
-                                                </div>
-                                                <p class="traffic-signs-info fw-500 text-center theme-color-161616">No
-                                                    entry</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                                    <div class="card content-card traffic-sign-card">
-                                        <div class="card-body">
-                                            <div class="content-body card-border-none">
-                                                <span
-                                                    class="start-content start-number theme-color-fff text-center mx-sm-0 mx-auto">05</span>
-                                                <div class="traffic-sign-image">
-                                                    <img src="assets/image/ts-upload/ts-img5.png"
-                                                        class="img-fluid mx-auto d-block ">
-                                                </div>
-                                                <p class="traffic-signs-info fw-500 text-center theme-color-161616">
-                                                    Sharp curve to the right</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                                    <div class="card content-card traffic-sign-card">
-                                        <div class="card-body">
-                                            <div class="content-body card-border-none">
-                                                <span
-                                                    class="start-content start-number theme-color-fff text-center mx-sm-0 mx-auto">06</span>
-                                                <div class="traffic-sign-image">
-                                                    <img src="assets/image/ts-upload/ts-img6.png"
-                                                        class="img-fluid mx-auto d-block ">
-                                                </div>
-                                                <p class="traffic-signs-info fw-500 text-center theme-color-161616">
-                                                    Pedestrian crossing</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                                    <div class="card content-card traffic-sign-card">
-                                        <div class="card-body">
-                                            <div class="content-body card-border-none">
-                                                <span
-                                                    class="start-content start-number theme-color-fff text-center mx-sm-0 mx-auto">07</span>
-                                                <div class="traffic-sign-image">
-                                                    <img src="assets/image/ts-upload/ts-img7.png"
-                                                        class="img-fluid mx-auto d-block ">
-                                                </div>
-                                                <p class="traffic-signs-info fw-500 text-center theme-color-161616">
-                                                    Parking on the right allowed</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                                    <div class="card content-card traffic-sign-card">
-                                        <div class="card-body">
-                                            <div class="content-body card-border-none">
-                                                <span
-                                                    class="start-content start-number theme-color-fff text-center mx-sm-0 mx-auto">08</span>
-                                                <div class="traffic-sign-image">
-                                                    <img src="assets/image/ts-upload/ts-img8.png"
-                                                        class="img-fluid mx-auto d-block ">
-                                                </div>
-                                                <p class="traffic-signs-info fw-500 text-center theme-color-161616">
-                                                    U-turn prohibited</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                                    <div class="card content-card traffic-sign-card">
-                                        <div class="card-body">
-                                            <div class="content-body card-border-none">
-                                                <span
-                                                    class="start-content start-number theme-color-fff text-center mx-sm-0 mx-auto">09</span>
-                                                <div class="traffic-sign-image">
-                                                    <img src="assets/image/ts-upload/ts-img9.png"
-                                                        class="img-fluid mx-auto d-block ">
-                                                </div>
-                                                <p class="traffic-signs-info fw-500 text-center theme-color-161616">
-                                                    U-turn prohibited</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                                    <div class="card content-card traffic-sign-card">
-                                        <div class="card-body">
-                                            <div class="content-body card-border-none">
-                                                <span
-                                                    class="start-content start-number theme-color-fff text-center mx-sm-0 mx-auto">10</span>
-                                                <div class="traffic-sign-image">
-                                                    <img src="assets/image/ts-upload/ts-img10.png"
-                                                        class="img-fluid mx-auto d-block ">
-                                                </div>
-                                                <p class="traffic-signs-info fw-500 text-center theme-color-161616">
-                                                    U-turn prohibited</p>
-                                            </div>
-                                        </div>
-                                    </div>
+                            <div class="scroll-container-signs" style="height:800px; overflow-y:auto;">
+                                <div class="row g-4" id="signContainer">
+                                    <!-- Signs will be loaded dynamically here -->
                                 </div>
                             </div>
                         </div>
@@ -382,9 +57,134 @@
                 </div>
             </div>
         </div>
-        </div>
     </section>
     <!-- question answer section end -->
 
-    
+
 @endsection
+
+
+
+
+@push('scripts')
+    <script>
+        $(document).ready(function () {
+            let offset = 0;
+            let loading = false;
+            let endReached = false;
+            let language = $("#langselect").val();
+
+            function loadQuestions() {
+                if (loading || endReached) return;
+
+
+                $.ajax({
+                    url: "{{ route('loadQuestions') }}",
+                    method: "GET",
+                    data: { offset: offset, lang: language },
+                    dataType: "json",
+                    beforeSend: function () {
+                        loading = true;
+                    },
+                    success: function (res) {
+                        if (res.count > 0) {
+                            $("#questionContainer").append(res.html);
+                            offset += res.count;
+                        } else {
+                            endReached = true;
+                            $("#questionContainer").append(
+                                '<div class="col-12 text-center my-3"><i>No more questions available.</i></div>'
+                            );
+                        }
+                        loading = false;
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("AJAX error:", error);
+                        loading = false;
+                    }
+                });
+            }
+
+            // Initial load
+            loadQuestions();
+
+            // Scroll event inside the container
+            $(".scroll-container").on("scroll", function () {
+                let $this = $(this);
+                if ($this.scrollTop() + $this.innerHeight() >= this.scrollHeight - 20) {
+                    loadQuestions();
+                }
+            });
+
+            // language 
+            $("#langselect").on("change", function () {
+                offset = 0;
+                endReached = false;
+                language = $(this).val(); // update the language value
+                $("#questionContainer").html(""); // clear old questions
+                loadQuestions();
+
+            });
+        });
+
+
+        //sign
+        $(document).ready(function () {
+            let signOffset = 0;
+            let signLoading = false;
+            let signEndReached = false;
+            let language = $("#langselect").val();
+
+            function loadSigns() {
+                if (signLoading || signEndReached) return;
+
+                $.ajax({
+                    url: "{{ route('loadSigns') }}",
+                    method: "GET",
+                    data: { offset: signOffset, lang: language },
+                    dataType: "json",
+                    beforeSend: function () {
+                        signLoading = true;
+                    },
+                    success: function (res) {
+                        if (res.count > 0) {
+                            $("#signContainer").append(res.html);
+                            signOffset += res.count;
+                        } else {
+                            signEndReached = true;
+                            $("#signContainer").append(
+                                '<div class="col-12 text-center my-3"><i>No more signs available.</i></div>'
+                            );
+                        }
+                        signLoading = false;
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("AJAX error:", error);
+                        signLoading = false;
+                    }
+                });
+            }
+
+            // Initial load
+            loadSigns();
+
+            // Scroll event inside sign container
+            $(".scroll-container-signs").on("scroll", function () {
+                let $this = $(this);
+                if ($this.scrollTop() + $this.innerHeight() >= this.scrollHeight - 20) {
+                    loadSigns();
+                }
+            });
+
+            // language 
+            $("#langselect").on("change", function () {
+                offset = 0;
+                endReached = false;
+                language = $(this).val(); // update the language value
+                $("#signContainer").html(""); // clear old questions
+                loadSigns();
+
+            });
+        });
+    </script>
+@endpush1

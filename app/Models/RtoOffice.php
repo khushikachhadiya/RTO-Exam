@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class RtoOffice extends Model
 {
-    protected $table = ['rto_offices'];
+    protected $table = 'rto_offices';
 
      protected $fillable = ['stateCode', 'stateName', 'officeAddress', 'contact'];
 

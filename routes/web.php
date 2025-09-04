@@ -21,8 +21,11 @@ Route::controller(HomeController::class)->group(function () {
 });
 Route::controller(  QuestionbankController::class)->group(function () {
     Route::get('/questionbank','view' )->name('questionbank');
+    Route::get('/load_questions', 'loadQuestions')->name('loadQuestions');
+    Route::get('/load_signs',  'loadSigns')->name('loadSigns');
     
 });
+
 Route::controller(SettingController::class)->group(function () {
     Route::get('/setting' ,'view' )->name('setting');
     
