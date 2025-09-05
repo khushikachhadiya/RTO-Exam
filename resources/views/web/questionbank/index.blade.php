@@ -65,10 +65,17 @@
 
 
 
-
 @push('scripts')
     <script>
         $(document).ready(function () {
+            
+            // CSRF token globally for all AJAX requests
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': "{{ csrf_token() }}"
+                }
+            });
+
             let offset = 0;
             let loading = false;
             let endReached = false;
@@ -77,10 +84,9 @@
             function loadQuestions() {
                 if (loading || endReached) return;
 
-
                 $.ajax({
                     url: "{{ route('loadQuestions') }}",
-                    method: "GET",
+                    method: "POST",
                     data: { offset: offset, lang: language },
                     dataType: "json",
                     beforeSend: function () {
@@ -105,7 +111,6 @@
                 });
             }
 
-            // Initial load
             loadQuestions();
 
             // Scroll event inside the container
@@ -116,31 +121,27 @@
                 }
             });
 
-            // language 
+            // language change
             $("#langselect").on("change", function () {
                 offset = 0;
                 endReached = false;
-                language = $(this).val(); // update the language value
-                $("#questionContainer").html(""); // clear old questions
+                language = $(this).val();
+                $("#questionContainer").html(""); 
                 loadQuestions();
-
             });
-        });
 
 
-        //sign
-        $(document).ready(function () {
+            //  Signs 
             let signOffset = 0;
             let signLoading = false;
             let signEndReached = false;
-            let language = $("#langselect").val();
 
             function loadSigns() {
                 if (signLoading || signEndReached) return;
 
                 $.ajax({
                     url: "{{ route('loadSigns') }}",
-                    method: "GET",
+                    method: "POST",
                     data: { offset: signOffset, lang: language },
                     dataType: "json",
                     beforeSend: function () {
@@ -176,15 +177,15 @@
                 }
             });
 
-            // language 
+            // language change for signs
             $("#langselect").on("change", function () {
-                offset = 0;
-                endReached = false;
-                language = $(this).val(); // update the language value
-                $("#signContainer").html(""); // clear old questions
+                signOffset = 0;
+                signEndReached = false;
+                language = $(this).val();
+                $("#signContainer").html(""); 
                 loadSigns();
-
             });
+
         });
     </script>
-@endpush1
+@endpush
