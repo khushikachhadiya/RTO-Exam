@@ -11,7 +11,7 @@
                 </p>
             </div>
             <div class="content-body second-content d-flex gap-2 align-items-center">
-                <span class="start-content text-center start-alpha fs-18px">A</span>
+                <span class="start-content text-center start-alpha fs-18px">Ans</span>
                 <p class="fs-18px fw-300 theme-color-54595f mb-0">
                     {{ $q->answer }}
                 </p>

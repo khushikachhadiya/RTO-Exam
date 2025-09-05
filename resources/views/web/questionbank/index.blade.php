@@ -68,7 +68,7 @@
 @push('scripts')
     <script>
         $(document).ready(function () {
-            
+
             // CSRF token globally for all AJAX requests
             $.ajaxSetup({
                 headers: {
@@ -93,15 +93,29 @@
                         loading = true;
                     },
                     success: function (res) {
+                        
                         if (res.count > 0) {
                             $("#questionContainer").append(res.html);
                             offset += res.count;
                         } else {
+
                             endReached = true;
-                            $("#questionContainer").append(
-                                '<div class="col-12 text-center my-3"><i>No more questions available.</i></div>'
-                            );
+
+                            // $("#questionContainer").append(
+                            //     '<div class="col-12 text-center my-3"><i>No more questions available.</i></div>'
+                            // );
+
+                            // show message temporarily
+                            let msg = $('<div class="col-12 text-center my-3 temp-msg"><i>No more questions available.</i></div>');
+                            $("#questionContainer").append(msg);
+                            setTimeout(function () {
+                                msg.fadeOut(500, function () {
+                                    $(this).remove();
+                                });
+                            }, 1000); // 1 sec
+
                         }
+
                         loading = false;
                     },
                     error: function (xhr, status, error) {
@@ -126,7 +140,7 @@
                 offset = 0;
                 endReached = false;
                 language = $(this).val();
-                $("#questionContainer").html(""); 
+                $("#questionContainer").html("");
                 loadQuestions();
             });
 
@@ -153,9 +167,20 @@
                             signOffset += res.count;
                         } else {
                             signEndReached = true;
-                            $("#signContainer").append(
-                                '<div class="col-12 text-center my-3"><i>No more signs available.</i></div>'
-                            );
+
+                            // $("#signContainer").append(
+                            //     '<div class="col-12 text-center my-3"><i>No more signs available.</i></div>'
+                            // );
+
+                            // show message temporarily
+                            let msg = $('<div class="col-12 text-center my-3 temp-msg"><i>No more sgins available.</i></div>');
+                            $("#signContainer").append(msg);
+                            setTimeout(function () {
+                                msg.fadeOut(500, function () {
+                                    $(this).remove();
+                                });
+                            }, 3000); // 3 sec
+
                         }
                         signLoading = false;
                     },
@@ -182,7 +207,7 @@
                 signOffset = 0;
                 signEndReached = false;
                 language = $(this).val();
-                $("#signContainer").html(""); 
+                $("#signContainer").html("");
                 loadSigns();
             });
 
