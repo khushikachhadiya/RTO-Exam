@@ -22,6 +22,7 @@ class CleanQuestionBankSeeder extends Seeder
             $cleanAnswer = str_replace(['[', ']', '"'], '', $cleanAnswer);
             $cleanAnswer = preg_replace('/^A\.\s*/', '', $cleanAnswer);
             $cleanAnswer = preg_replace('/^જ\.\s*/', '', $cleanAnswer);
+            
             DB::table('question_bank')
                 ->where('id', operator: $q->id)
                 ->update([
