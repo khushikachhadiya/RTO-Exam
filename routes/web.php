@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\web\QuestionController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\web\HomeController;
@@ -13,6 +14,11 @@ Route::controller(Examcontroller::class)->group(function () {
     Route::get('/exam','view')->name('exam');
     
 });
+
+// Route::controller(QuestionController::class)->group(function () {
+//     Route::get('','view')->name('questions');
+    
+// });
 
 
 Route::controller(HomeController::class)->group(function () {
