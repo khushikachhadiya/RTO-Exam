@@ -15,16 +15,11 @@ Route::controller(Examcontroller::class)->group(function () {
     
 });
 
-// Route::controller(QuestionController::class)->group(function () {
-//     Route::get('','view')->name('questions');
-    
-// });
-
-
 Route::controller(HomeController::class)->group(function () {
     Route::get('/home','view' )->name('home');
     
 });
+
 Route::controller(  QuestionbankController::class)->group(function () {
     Route::get('/questionbank','view' )->name('questionbank');
     Route::post('/load_questions', 'loadQuestions')->name('loadQuestions');
