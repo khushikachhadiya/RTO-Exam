@@ -9,7 +9,9 @@ use App\Http\Controllers\web\SettingController;
 use App\Http\Controllers\web\Examcontroller;
 
 
- 
+
+Route::middleware('lang')->group(function(){
+
 Route::controller(Examcontroller::class)->group(function () {
     Route::get('/exam','view')->name('exam');
     
@@ -30,4 +32,6 @@ Route::controller(  QuestionbankController::class)->group(function () {
 Route::controller(SettingController::class)->group(function () {
     Route::get('/setting' ,'view' )->name('setting');
     
+});
+
 });
