@@ -17,7 +17,7 @@
                             <p class="mb-3 mb-md-4 mb-lg-5">Available for major states of India in english, Hindi and
                                 native languages.</p>
                             <button class="btn nav-btn heading-button" type="submit">
-                                <a href="javascript:void(0)" class="theme-color-FEDF53 fs-18px">Start Exam</a>
+                                <a href="{{route("exam")}}" class="theme-color-FEDF53 fs-18px">Start Exam</a>
                             </button>
                         </div>
                     </div>
@@ -69,7 +69,7 @@
                                 <img src="assets/image/feature-section-shape1.png" alt="feature-section-shape1"
                                     class="img-fluid  feature-section-shape1">
                             </div>
-                            <a href="javascript:void(0)" class="circle">
+                            <a href="{{route("questionbank")}}" class="circle">
                                 <div class="circle-1"><i class="fa-solid fa-arrow-right theme-color-fff"></i></div>
                             </a>
                             <div class="card-content">
@@ -92,7 +92,7 @@
                                 <img src="assets/image/feature-section-shape1.png" alt="feature-section-shape1"
                                     class="img-fluid feature-section-shape1">
                             </div>
-                            <a href="javascript:void(0)" class="circle">
+                            <a href="{{route("exam")}}" class="circle">
                                 <div class="circle-1"><i class="fa-solid fa-arrow-right theme-color-fff"></i></div>
                             </a>
                             <div class="card-content">
@@ -114,7 +114,7 @@
                                 <img src="assets/image/feature-section-shape1.png" alt="feature-section-shape1"
                                     class="img-fluid feature-section-shape1">
                             </div>
-                            <a href="javascript:void(0)" class="circle">
+                            <a href="{{route("setting")}}" class="circle">
                                 <div class="circle-1"><i class="fa-solid fa-arrow-right theme-color-fff"></i></div>
                             </a>
                             <div class="card-content">
