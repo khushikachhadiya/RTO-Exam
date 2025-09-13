@@ -10,7 +10,7 @@ class Examcontroller extends Controller
 {
     public function view(Request $request)
     {
-      $lang = $request->get('lang', 'eng');
+      $lang = session()->get('lang', 'eng');
 
         // Get 15 random questions
         $questions = Question::where('lang',$lang)
@@ -21,4 +21,11 @@ class Examcontroller extends Controller
         return view('web.exam.index', compact('questions'));
     }
    
+    // public function setLanguage($lang)
+    // {
+    //     session()->put('lang', $lang);
+
+    //     // Redirect to exam page
+    //     return redirect()->route('exam');
+    // }
 }

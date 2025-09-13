@@ -32,7 +32,7 @@
                                         <h4 class="mb-3 fw-600">{{ __('exam.instructions') }}</h4>
                                         <p class="fw-500 mb-3">{{ __('exam.instructions_line1') }}</p>
                                         <p class="fw-500 mb-3">{{ __('exam.instructions_line2') }}</p>
-                                        <p class="fw-500 mb-3"><strong>30</strong> {{ __('exam.instructions_line3') }}</p>
+                                        <p class="fw-500 mb-3"> {{ __('exam.instructions_line3') }}</p>
                                         <a class="r-submit w-100 text-center fw-300" id="startExambtn"
                                             href="javascript:void(0)">
                                             {{ __('exam.start_exam') }}</a>
@@ -173,7 +173,7 @@
                                             <a class="r-submit w-100 text-center fw-300" href="{{route('home')}}">
                                                 {{ __('exam.home') }}</a>
                                             <a class="r-submit w-100 text-center fw-300" href="#"
-                                                id="showScoreBoard">{{ __('exam.scoreboard') }}</a>
+                                                id="showScoreBoard">{{__('exam.scoreboard')}}</a>
                                             <a class="r-submit w-100 text-center fw-300"
                                                 href="{{route("exam")}}">{{ __('exam.retake_exam') }}</a>
                                         </div>
@@ -231,7 +231,7 @@
             <div class="row justify-content-center">
                 <div class="col-12 col-lg-6 mt-4">
                     <div class="d-flex align-items-center flex-column flex-ms-row justify-content-center gap-3">
-                        <a class="r-submit fw-300" href="{{route('home')}}">  {{ __('exam.home') }}</a>
+                        <a class="r-submit fw-300" href="{{route('home')}}">{{ __('exam.home') }}</a>
                         <a class="r-submit fw-300" href="{{route('exam')}}">{{ __('exam.try_again') }}</a><br>
                     </div>
                 </div>
@@ -335,8 +335,8 @@
                 $(".startExam-section").hide();
                 $(".quiz-section").hide();
                 $(".result-section").show();
-                $("#correct_answer").text("Correct Answers: " + correctCount);
-                $("#wrong_answer").text("Wrong Answers: " + wrongCount);
+                $("#correct_answer").text("{{ __('exam.correct_answers') }}  " + correctCount);
+                $("#wrong_answer").text("{{ __('exam.wrong_answers') }}  " + wrongCount);
                 $(".ScoreBoard-section").hide();
 
                 if (correctCount >= 11) {
@@ -359,7 +359,7 @@
 
 
             // ScoreBoard 
-            $("#showScoreBoard").click(function (e) {
+            $(document).on("click", "#showScoreBoard", function (e) {
                 e.preventDefault();
                 $(".result-section").hide();
                 $(".ScoreBoard-section").show();
@@ -371,16 +371,28 @@
 
 
                 scoreboardData.forEach((item, index) => {
-                    const isCorrect = item.user === item.correct;
+                    let icon, colorClass;
+
+                    if (item.user === "Not Answered") {
+                        icon = "❓";        // not answered
+                        colorClass = "text-warning";
+                    } else if (item.user === item.correct) {
+                        icon = "✅";        // correct
+                        colorClass = "text-success";
+                    } else {
+                        icon = "❌";        // wrong
+                        colorClass = "text-danger";
+                    }
+
                     sbContainer.append(`
                                 <div class="mb-3">
-                                    <p><b> ${item.question}</b>
-                                    ${item.image ? `<img src="${item.image}" alt="Q Image" style="max-width:100px;max-height:100px;"><br>` : ""}</p>
-                                    <p><span class= "text-success"><b>Correct Answer:  ${item.correct}</span></p></b>
-                                    <p><span class="${isCorrect ? 'text-success' : 'text-danger'}"><b>Your Answer: ${item.user}</span></p></b>
-                                    <hr style="color:blue">
-                                </div>
-                            `);
+                            <p><span class="fw-bold">${icon}</span><b>${item.question}</b>
+                            ${item.image ? `<img src="${item.image}" alt="Q Image" class="my-2" style="max-width:100px;max-height:100px;"><br>` : ""}</p>
+                            <p><span class="text-success"><b>{{ __('exam.correct_answers') }} ${item.correct}</span></p></b>
+                            <p><span class="${colorClass}"><b>{{ __('exam.wrong_answers') }} ${item.user}</span></p></b>
+                            <hr style="color:blue">
+                        </div>
+                    `);
                 });
             });
 
@@ -413,46 +425,7 @@
             // hide result section initially
             $(".result-section").hide();
 
-            $("#langselect").on("change", function () {
-                let language = $(this).val();  // Get the selected language value
-
-                // Send an AJAX request to fetch the questions for the selected language
-                $.ajax({
-                    url: "{{ route('exam') }}",
-                    method: "GET",
-                    data: { lang: language },
-                    success: function (response) {
-
-                        // Replace the old quiz HTML with the new one from response
-                        $(".quiz-section").html($(response).find(".quiz-section").html());
-                        $(".startExam-section").html($(response).find(".startExam-section").html());
-                        $(".question-section").html($(response).find(".question-section").html());
-                        $(".result-section").html($(response).find(".result-section").html());
-                        $(".ScoreBoard-section").html($(response).find(".ScoreBoard-section").html());
-
-
-                        $(".quiz-section").hide();
-                        $(".startExam-section").show();
-                        $(".ScoreBoard-section").hide();
-
-                        currentIndex = 0;
-                        correctCount = 0;
-                        wrongCount = 0;
-                        scoreboardData = [];
-
-                        $("#scoreboard-text").empty();
-
-                        $(".true-answer-counter").text(0);
-                        $(".wrong-answer-counter").text(0);
-
-                        $("input[type=radio]").prop("checked", false);
-
-                        $(".quiz-card[data-correct]").hide();
-                        $(".quiz-card[data-correct]").eq(currentIndex).show();
-
-                    }
-                });
-            });
+            
         });
     </script>
 @endpush

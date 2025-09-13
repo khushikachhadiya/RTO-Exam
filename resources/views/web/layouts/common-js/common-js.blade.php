@@ -1,6 +1,3 @@
-
-
-
 <script>
     // select2 
 
@@ -40,5 +37,13 @@
         $(window).scrollTop(0)
     })
 
+    //language
+    $(document).ready(function () {
+        $("#langselect").on("change", function () {
+            var Language = $(this).val();
+            window.location.href = `{{ route('set-locale') }}/${Language}`;
+
+        });
+    });
 
 </script>

@@ -10,9 +10,9 @@
             <div class="row">
                 <div class="col-12">
                     <div class="exam-test-content">
-                        <h1 class="theme-color-fff">RTO EXAM</h1>
+                        <h1 class="theme-color-fff">{{ __('questionbank.title') }}</h1>
                         <!-- <img src="assets/image/rto-banner-image.png" alt="rto-banner-image" class="img-fluid"> -->
-                        <p class="fs-20px fw-300 mb-0">List of Questions & answer and meaning of road signs</p>
+                        <p class="fs-20px fw-300 mb-0">{{ __('questionbank.description') }}</p>
                     </div>
                 </div>
             </div>
@@ -26,12 +26,12 @@
                     <ul class="nav nav-pills nav-fill gap-3 mb-5 question-nav" id="pills-tab" role="tablist">
                         <li class="nav-item" role="presentation">
                             <button class="nav-link active fw-700" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
-                                type="button" role="tab" aria-controls="pills-home" aria-selected="true">Questions</button>
+                                type="button" role="tab" aria-controls="pills-home" aria-selected="true">{{__('questionbank.questions')}}</button>
                         </li>
                         <li class="nav-item nav-secont-item" role="presentation">
                             <button class="nav-link sign-link traffic-content-space" id="profile-tab" data-bs-toggle="tab"
                                 data-bs-target="#profile" type="button" role="tab" aria-controls="pills-profile"
-                                aria-selected="true">Traffic Signs</button>
+                                aria-selected="true">{{__('questionbank.trafficSign')}}</button>
                         </li>
                     </ul>
 
@@ -101,12 +101,9 @@
 
                             endReached = true;
 
-                            // $("#questionContainer").append(
-                            //     '<div class="col-12 text-center my-3"><i>No more questions available.</i></div>'
-                            // );
 
                             // show message temporarily
-                            let msg = $('<div class="col-12 text-center my-3 temp-msg"><i>No more questions available.</i></div>');
+                            let msg = $('<div class="col-12 text-center my-3 temp-msg"><i>{{__('questionbank.no_more_questions')}}</i></div>');
                             $("#questionContainer").append(msg);
                             setTimeout(function () {
                                 msg.fadeOut(500, function () {
@@ -135,16 +132,6 @@
                 }
             });
 
-            // language change
-            $("#langselect").on("change", function () {
-                offset = 0;
-                endReached = false;
-                language = $(this).val();
-                $("#questionContainer").html("");
-                loadQuestions();
-            });
-
-
             //  Signs 
             let signOffset = 0;
             let signLoading = false;
@@ -168,12 +155,8 @@
                         } else {
                             signEndReached = true;
 
-                            // $("#signContainer").append(
-                            //     '<div class="col-12 text-center my-3"><i>No more signs available.</i></div>'
-                            // );
-
                             // show message temporarily
-                            let msg = $('<div class="col-12 text-center my-3 temp-msg"><i>No more sgins available.</i></div>');
+                            let msg = $('<div class="col-12 text-center my-3 temp-msg"><i>{{__('questionbank.no_more_signs')}}</i></div>');
                             $("#signContainer").append(msg);
                             setTimeout(function () {
                                 msg.fadeOut(500, function () {
@@ -200,15 +183,6 @@
                 if ($this.scrollTop() + $this.innerHeight() >= this.scrollHeight - 20) {
                     loadSigns();
                 }
-            });
-
-            // language change for signs
-            $("#langselect").on("change", function () {
-                signOffset = 0;
-                signEndReached = false;
-                language = $(this).val();
-                $("#signContainer").html("");
-                loadSigns();
             });
 
         });

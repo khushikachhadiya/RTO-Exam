@@ -34,4 +34,12 @@ Route::controller(SettingController::class)->group(function () {
     
 });
 
+Route::get('set-locale/{lang?}', function($lang = 'eng'){
+        if(!in_array($lang,['guj','eng'])){
+            $lang = 'eng';
+        }
+        session()->put('lang',$lang);
+        return redirect()->back();
+    })->name('set-locale');
+
 });

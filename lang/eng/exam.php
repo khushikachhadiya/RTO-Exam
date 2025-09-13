@@ -24,7 +24,7 @@ return [
     'retake_exam' => 'Retake Exam',
 
     
-    
+
     'scoreboard_subtitle' => 'Time and question bound test exactly same as actual RTO test',
     'question_text' => 'Question:',
     'image_text' => 'Image:',
