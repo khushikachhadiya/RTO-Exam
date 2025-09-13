@@ -85,7 +85,7 @@
                                         <label class="click-answer">
                                             <input type="radio" name="q{{ $index }}" value="{{ $q->option_a }}" class="d-none">
                                             <div class="select-answer d-flex align-items-center p-3">
-                                                <div class="click-with fs-14px">A</div>
+                                                <div class="click-with fs-14px">A </div>
                                                 <div class="option-texta">{{ $q->option_a }}</div>
                                             </div>
                                         </label>
@@ -93,7 +93,7 @@
                                         <label class="click-answer">
                                             <input type="radio" name="q{{ $index }}" value="{{ $q->option_b }}" class="d-none">
                                             <div class="select-answer d-flex align-items-center p-3">
-                                                <div class="click-with fs-14px">B</div>
+                                                <div class="click-with fs-14px">B </div>
                                                 <div class="option-texta">{{ $q->option_b }}</div>
                                             </div>
                                         </label>
@@ -101,7 +101,7 @@
                                         <label class="click-answer">
                                             <input type="radio" name="q{{ $index }}" value="{{ $q->option_c }}" class="d-none">
                                             <div class="select-answer d-flex align-items-center p-3">
-                                                <div class="click-with fs-14px">C</div>
+                                                <div class="click-with fs-14px">C </div>
                                                 <div class="option-texta">{{ $q->option_c }}</div>
                                             </div>
                                         </label>
@@ -299,7 +299,7 @@
                 scoreboardData.push({
                     question: questionText,
                     correct: correctAnswer,
-                    user: selected ? selected : "Not Answered",
+                    user: selected ? selected : "{{__('exam.you_have_not_selected')}}",
                     image: img
                 });
 
@@ -373,7 +373,7 @@
                 scoreboardData.forEach((item, index) => {
                     let icon, colorClass;
 
-                    if (item.user === "Not Answered") {
+                    if (item.user === "{{__('exam.you_have_not_selected')}}") {
                         icon = "❓";        // not answered
                         colorClass = "text-warning";
                     } else if (item.user === item.correct) {
@@ -388,8 +388,8 @@
                                 <div class="mb-3">
                             <p><span class="fw-bold">${icon}</span><b>${item.question}</b>
                             ${item.image ? `<img src="${item.image}" alt="Q Image" class="my-2" style="max-width:100px;max-height:100px;"><br>` : ""}</p>
-                            <p><span class="text-success"><b>{{ __('exam.correct_answers') }} ${item.correct}</span></p></b>
-                            <p><span class="${colorClass}"><b>{{ __('exam.wrong_answers') }} ${item.user}</span></p></b>
+                            <p><span class="text-success"><b>{{ __('exam.correct_answer_text') }} ${item.correct}</span></p></b>
+                            <p><span class="${colorClass}"><b>{{ __('exam.your_answer_text') }} ${item.user}</span></p></b>
                             <hr style="color:blue">
                         </div>
                     `);
