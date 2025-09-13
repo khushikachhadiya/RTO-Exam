@@ -252,7 +252,7 @@
             let correctCount = 0;
             let wrongCount = 0;
             let timer;
-            let timeleft = 3;
+            let timeleft = 30;
             let scoreboardData = [];
 
 
@@ -269,7 +269,7 @@
             }
 
             function startTimer() {
-                timeleft = 3; //reset for each questions
+                timeleft = 30; //reset for each questions
                 updateTimer();
                 timer = setInterval(function () {
                     timeleft--;
