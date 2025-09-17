@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\contactMailController;
 use App\Http\Controllers\web\QuestionController;
 use Illuminate\Support\Facades\Route;
 
@@ -43,3 +44,5 @@ Route::get('set-locale/{lang?}', function($lang = 'eng'){
     })->name('set-locale');
 
 });
+
+Route::post('/contact/send',[contactMailController::class,'sendContact'])->name('contact.send');
